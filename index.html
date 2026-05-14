@@ -1,0 +1,74 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Portafolio</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<div class="contenedor">
+    <h1>Simulador de Portafolio de Inversión</h1>
+    <p class="subtitulo">InvestPro · Asesoría financiera</p>
+
+    <hr>
+
+    <label>Nombre del cliente</label>
+    <input type="text" id="cliente" placeholder="Ej: Juan Pérez">
+
+    <label>Capital total a invertir (CLP)</label>
+    <input type="number" id="capital" placeholder="Ej: 5000000">
+
+    <table>
+        <thead>
+            <tr>
+                <th>INSTRUMENTO</th>
+                <th>% ASIGNADO</th>
+                <th>RENT. ANUAL %</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Google Ads</td>
+                <td><input type="number" class="porcentaje"></td>
+                <td><input type="number" class="rentabilidad"></td>
+            </tr>
+            <tr>
+                <td>Facebook Ads</td>
+                <td><input type="number" class="porcentaje"></td>
+                <td><input type="number" class="rentabilidad"></td>
+            </tr>
+            <tr>
+                <td>Instagram Ads</td>
+                <td><input type="number" class="porcentaje"></td>
+                <td><input type="number" class="rentabilidad"></td>
+            </tr>
+            <tr>
+                <td>TikTok Ads</td>
+                <td><input type="number" class="porcentaje"></td>
+                <td><input type="number" class="rentabilidad"></td>
+            </tr>
+
+            <tr>
+                <td>Email Marketing</td>
+                <td><input type="number" class="porcentaje"></td>
+                <td><input type="number" class="rentabilidad"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="suma">
+        <span>Suma actual de asignaciones:</span>
+        <strong id="totalPorcentaje">0%</strong>
+    </div>
+
+    <button onclick="calcular()">Calcular portafolio</button>
+
+    <div id="errores"></div>
+</div>
+
+<script src="scrips.js"></script>
+</body>
+</html>
