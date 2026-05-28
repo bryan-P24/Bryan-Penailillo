@@ -34,6 +34,10 @@ function calcular() {
     const capital = Number(document.getElementById("capital").value);
     const rentabilidades = document.querySelectorAll(".rentabilidad");
     const errores = document.getElementById("errores");
+     rentabilidades.forEach(input => {
+        console.log("rentabilidad", input.value);
+    });
+   
 
     let mensajes = [];
     let suma = 0;
@@ -67,8 +71,8 @@ function calcular() {
 
         let valor = Number(input.value);
 
-        if (valor < -20 || valor > 50 || isNaN(valor)) {
-            mensajes.push("• La rentabilidad del instrumento " + (i + 1) + " debe estar entre -20 y 50.");
+        if (valor <=0  || isNaN(valor)) {
+            mensajes.push("• La rentabilidad del instrumento " + (i + 1) + " debe ser mayor que 0");
         }
 
     });
@@ -110,12 +114,14 @@ function calcular() {
         errores.style.borderLeft = "5px solid green";
 
         errores.innerHTML =
-    "<strong>Resultado Presupuesto Marketing</strong><br><br>" +
-    "Cliente: " + cliente + "<br>" +
-    "Presupuesto mensual: $" + capital.toLocaleString("es-CL") + " CLP<br>" +
-    "Clicks estimados totales: " + rentabilidadTotal.toFixed(0) + "<br>" +
-    "Inversión proyectada: $" + ganancia.toLocaleString("es-CL") + " CLP<br>" +
-    "Total estimado final: $" + totalFinal.toLocaleString("es-CL") + " CLP";
+            "<strong>Resultado Presupuesto Marketing</strong><br><br>" +
+            "Cliente: " + cliente + "<br>" +
+            "Presupuesto mensual: $" + capital.toLocaleString("es-CL") + " CLP<br>" +
+            "Clicks estimados totales: " + rentabilidadTotal.toFixed(0) + "<br>" +
+            "Inversión proyectada: $" + ganancia.toLocaleString("es-CL") + " CLP<br>" +
+            "Total estimado final: $" + totalFinal.toLocaleString("es-CL") + " CLP";
+    }
+}
 
 // Ejecutar al cargar
 actualizarSuma();
